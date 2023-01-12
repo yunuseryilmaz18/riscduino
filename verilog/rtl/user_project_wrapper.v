@@ -1312,6 +1312,7 @@ sky130_sram_2kbyte_1rw1r_32x512_8 u_dcache_2kb(
 /***********************************************
   AES 128 Bit 
 *************************************************/
+/*
 aes_top u_aes (
 `ifdef USE_POWER_PINS
     .vccd1                 (vccd1            ),
@@ -1333,11 +1334,12 @@ aes_top u_aes (
     .dmem_req_ack          (aes_dmem_req_ack ),
     .dmem_rdata            (aes_dmem_rdata   ),
     .dmem_resp             (aes_dmem_resp    )
-);
+);*/
 
 /***********************************************
   FPU
 *************************************************/
+/*
 fpu_wrapper u_fpu (
 `ifdef USE_POWER_PINS
     .vccd1                 (vccd1            ),
@@ -1360,14 +1362,14 @@ fpu_wrapper u_fpu (
           .dmem_rdata         (fpu_dmem_rdata               ),
           .dmem_resp          (fpu_dmem_resp                )
 );
-
+*/
 /*********************************************************
 * SPI Master
 * This is implementation of an SPI master that is controlled via an AXI bus                                                  . 
 * It has FIFOs for transmitting and receiving data. 
 * It supports both the normal SPI mode and QPI mode with 4 data lines.
 * *******************************************************/
-
+/*
 qspim_top
 #(
 `ifndef SYNTHESIS
@@ -1416,7 +1418,7 @@ qspim_top
 
 );
 
-
+*/
 //---------------------------------------------------
 // wb_interconnect
 //---------------------------------------------------
@@ -1861,7 +1863,7 @@ peri_top u_peri(
 // 4 x 8 bit DAC
 //------------------------------------------
 
-
+/*
 dac_top  u_4x8bit_dac(
 `ifdef USE_POWER_PINS
           .vccd1              (vdda1                        ),
@@ -1877,7 +1879,7 @@ dac_top  u_4x8bit_dac(
           .Vout2              (analog_io[17]                ),
           .Vout3              (analog_io[18]                )
    );
-
+*/
 
 
 endmodule : user_project_wrapper
